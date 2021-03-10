@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="./js/libraries/aframe.min.js"></script>
+    <script src="./js/libraries/aframe-environment-component.min.js"></script>
+    
+    <script src="./js/libraries/aframe-event-set-component.min.js"></script>
+    <script src="./js/libraries/aframe-extras.min.js"></script>
+    <!-- <script src="./js/camera-rig.js"></script> -->
+    <script src="./js/zoom.js"></script>
+</head>
+<body>
+  
+  <a-scene physics="gravity: -9.8" >
+    
+    <a-assets>
+      <img id="sky" src="./img/sky.jpg">
+      <a-asset-item id="floor" src="./gltf/Floor.gltf"></a-asset-item>
+      <a-asset-item id="room" src="./gltf/Room.gltf"></a-asset-item>
+      <a-asset-item id="wall" src="./gltf/Wall.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-sky src="#sky"></a-sky>
+    
+    <a-entity id="Floor" gltf-model="#floor" class="moveTarget"></a-entity>
+    <a-entity id="Room" gltf-model="#room" class="moveTarget">
+      <a-entity id="box1" class="moveTarget"><a-box color="black" position="4.1 5.1 -27" material="" geometry="depth: 5; height: 5" rotation="0 90 0"></a-box></a-entity>
+    </a-entity>
+    <a-entity id="Wall" gltf-model="#wall" class="moveTarget"></a-entity>
+    
+    <!-- Position camera rig -->
+    <!-- <a-entity id="p1" position="4 0 0" geometry="primitive: box" class="moveTarget"></a-entity>
+    <a-entity id="p2" position="4 0 -15" geometry="primitive: box" class="moveTarget"></a-entity> -->
+    
+    <!-- Camera rig -->
+
+    <!-- <a-mixin id="campos" position="2 4 3"></a-mixin>
+    <a-entity id="ray-origin: mouse" raycaster="objects: [geometry]"></a-entity>
+    <a-entity id="camera-rig" mixin="campos">
+      <a-entity camera look-controls position="2 4 3" wasd-controls></a-entity>
+    </a-entity> -->
+
+    <!-- Camera Before -->
+    <a-entity id="cam" camera position="3 4 7" look-controls wasd-controls>
+      <a-entity 
+        geometry="primitive:ring; radiusInner:0.01; radiusOuter:0.02"
+        position="0.05 0.05 -1.5"
+        material="shader:flat; color:red">
+      </a-entity>
+    </a-entity>
+
+  </a-scene> -->
+  
+</body>
